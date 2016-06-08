@@ -13,7 +13,7 @@ mysql_user = config.get("mysql","user")
 mysql_pass = config.get("mysql","pass")
 mysql_db = config.get("mysql","db")
 
-db = MySQLdb.connect(host=mysql_host,port=mysql_port,user=mysql_user,passwd=mysql_pass,db=mysql_db)
+db = MySQLdb.connect(host=mysql_host,port=int(mysql_port),user=mysql_user,passwd=mysql_pass,db=mysql_db)
 cursor = db.cursor()
 cursor.execute("SELECT hosts.host, hosts.name FROM hosts, hosts_groups, groups WHERE hosts.hostid=hosts_groups.hostid AND hosts.status=0 AND hosts_groups.groupid=groups.groupid AND groups.name='Weather stations'")
 data = cursor.fetchall()
