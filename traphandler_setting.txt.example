@@ -1,0 +1,6 @@
+[general]
+script=traphandler.py
+[rabbitmq]
+host=191.168.1.8
+user=john
+pass=pass0ver
